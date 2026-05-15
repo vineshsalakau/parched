@@ -7,9 +7,9 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.mob.GolemEntity;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.SkeletonEntity;
+import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.passive.TurtleEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
@@ -44,17 +44,15 @@ public class ParchedEntity extends SkeletonEntity {
 
         this.targetSelector.add(1, new RevengeGoal(this));
         this.targetSelector.add(2, new ActiveTargetGoal<>(this, PlayerEntity.class, true));
-        this.targetSelector.add(3, new ActiveTargetGoal<>(this, GolemEntity.class, true));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, IronGolemEntity.class, true));
         this.targetSelector.add(4, new ActiveTargetGoal<>(this, TurtleEntity.class,
                 10, true, false, TurtleEntity.BABY_TURTLE_ON_LAND_FILTER));
     }
 
-    @Override
     public boolean isBurningInDaylight() {
         return false;
     }
 
-    @Override
     public void performRangedAttack(LivingEntity target, float pullProgress) {
         World world = this.getEntityWorld();
 
