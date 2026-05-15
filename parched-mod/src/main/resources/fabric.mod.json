@@ -1,0 +1,21 @@
+{
+    "schemaVersion": 1,
+    "id": "parched",
+    "version": "${version}",
+    "name": "Parched Skeletons",
+    "description": "Backports the parched skeleton mob from 1.21.11 to 1.21.10.",
+    "authors": ["you"],
+    "license": "MIT",
+    "icon": "assets/parched/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": ["com.parchedmod.ParchedMod"],
+        "client": ["com.parchedmod.ParchedModClient"]
+    },
+    "mixins": [],
+    "depends": {
+        "fabricloader": ">=0.16.0",
+        "fabric-api": "*",
+        "minecraft": "~1.21.10"
+    }
+}
